@@ -10,7 +10,7 @@ export const FilterBlock: React.FC<Props> = ({ sort }) => {
   return (
     <aside>
       <h2>Сортировка</h2>
-      {filtersName.map((name, index) => <FilterButton key={index} text={name.name} filter={name.filter} sort={sort} />)}
+      {filtersName.map((name, index) => (<FilterButton key={index} text={name.name} filter={name.filter} sort={sort} />))}
     </aside>
   )
 }

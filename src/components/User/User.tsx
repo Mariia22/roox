@@ -1,14 +1,15 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 interface Props {
   key: number,
+  id: number,
   name: string,
   city: string,
   company: string,
 }
 
-export const User: React.FC<Props> = ({ name, city, company }) => {
-
+export const User: React.FC<Props> = ({ id, name, city, company }) => {
   return (
     <div>
       <ul>
@@ -16,8 +17,8 @@ export const User: React.FC<Props> = ({ name, city, company }) => {
         <li><span>город:</span>{city}</li>
         <li><span>компания:</span>{company}</li>
       </ul>
-      <a>Подробнее</a>
-    </div>
+      <Link to={`/user/${id}`}>Подробнее</Link>
+    </div >
   )
 }
 
