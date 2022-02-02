@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { User } from '../../components/User/User';
 import { UserType } from '../../types/user';
+import { UsersContext } from '../../App';
 
-interface Props {
-  items: Array<UserType>
-}
-export const UserList: React.FC<Props> = ({ items }) => {
+export const UserList: React.FC = () => {
+  const items: Array<UserType> = useContext(UsersContext);
+
   return (
     <div>
       <h1>Список пользователей</h1>

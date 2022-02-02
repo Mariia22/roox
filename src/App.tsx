@@ -8,6 +8,8 @@ import { Loading } from './components/Loading/Loading';
 import style from './styles/App.module.scss';
 import { UserCard } from './components/UserCard/UserCard';
 
+export const UsersContext = React.createContext<Array<UserType>>([]);
+
 function App() {
   const [users, setUsers] = useState<Array<UserType>>([])
   const [isLoading, setLoading] = useState<Boolean>(false)
@@ -32,15 +34,17 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className={style.app_wrapper}>
-        <FilterBlock sort={setSort} />
-        <Routes>
-          <Route path='/' element={isLoading ? <Loading /> : <UserList items={users} />} />
-          <Route path='/user/:id' element={<UserCard />} />
-        </Routes>
-      </div>
-    </Router>
+    <UsersContext.Provider value={users}>
+      <Router>
+        <div className={style.app_wrapper}>
+          <FilterBlock sort={setSort} />
+          <Routes>
+            <Route path='/' element={isLoading ? <Loading /> : <UserList />} />
+            <Route path='/user/:id' element={<UserCard />} />
+          </Routes>
+        </div>
+      </Router>
+    </UsersContext.Provider>
   );
 }
 
