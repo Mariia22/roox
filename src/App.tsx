@@ -16,14 +16,12 @@ function App() {
 
   const setSort = (filter: string): void => {
     if (filter === 'city') {
-      const sortedUsers = users.sort((a, b) => (a.address.city > b.address.city) ? 1 : -1);
-      setUsers(sortedUsers);
-      console.log(users);
+      const sortedUsersCity = [...users].sort((a, b) => (a.address.city > b.address.city) ? 1 : -1);
+      setUsers(sortedUsersCity);
     }
     else if (filter === 'company') {
-      const sortedUsers = users.sort((a, b) => (a.company.name > b.company.name) ? 1 : -1);
-      setUsers(sortedUsers);
-      console.log(users);
+      const sortedUsersCompany = [...users].sort((a, b) => (a.company.name > b.company.name) ? 1 : -1);
+      setUsers(sortedUsersCompany);
     }
   }
 
