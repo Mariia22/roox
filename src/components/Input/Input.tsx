@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 interface InputType {
+  labelName: string,
   name: string,
   type: string,
   value: string,
   required: boolean,
-  disabled: boolean
+  disabled: boolean,
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Input: React.FC<InputType> = ({ name, type, required, value, disabled }) => {
-
+export const Input: React.FC<InputType> = ({ labelName, name, type, required, value, disabled, onChange }) => {
   return (
-    <label>{name}
-      <input type={type} required={required} value={value} disabled={disabled} onChange={() => { console.log(value) }} />
+    <label>{labelName}
+      <input name={name} type={type} required={required} value={value} disabled={disabled} onChange={e => { onChange(e) }} />
     </label>
   );
 };

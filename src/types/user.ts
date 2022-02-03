@@ -14,3 +14,15 @@ export interface UserType {
     name: string
   }
 }
+
+export interface ValueFormType {
+  name: string,
+  username: string,
+  email: string,
+  phone: string,
+  website: string,
+  city: string,
+  street: string,
+  zipcode: string,
+  comment: string
+}
