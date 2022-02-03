@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import styles from './EditButton.module.scss'
 
 interface EditType {
   setDisabledForm: () => void
@@ -7,6 +8,6 @@ interface EditType {
 export const EditButton: React.FC<EditType> = ({ setDisabledForm }) => {
 
   return (
-    <button onClick={() => { setDisabledForm() }}>Редактировать</button>
+    <button className={styles.editButton} onClick={() => { setDisabledForm() }}>Редактировать</button>
   );
 };

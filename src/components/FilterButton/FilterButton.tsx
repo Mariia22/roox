@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import styles from './FilterButton.module.scss'
 
 interface Props {
   text: string,
@@ -8,6 +9,6 @@ interface Props {
 
 export const FilterButton: React.FC<Props> = ({ text, filter, sort }) => {
   return (
-    <button onClick={() => sort(filter)}>{text}</button>
+    <button className={styles.filterButton} onClick={() => sort(filter)}>{text}</button>
   )
 }

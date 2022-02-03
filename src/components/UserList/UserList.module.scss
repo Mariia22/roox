@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.userList {
+  width: 80%;
+  padding: 19px 62px 25px 34px;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+}
+
+.userListHeader {
+  font-size: 14px;
+  line-height: 16.41px;
+  font-weight: 700;
+}
+
+.userListText {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14.06px;
+  text-align: right;
+}

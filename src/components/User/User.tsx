@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import styles from './User.module.scss'
 
 interface Props {
   key: number,
@@ -11,13 +12,13 @@ interface Props {
 
 export const User: React.FC<Props> = ({ id, name, city, company }) => {
   return (
-    <div>
-      <ul>
-        <li><span>ФИО:</span>{name}</li>
-        <li><span>город:</span>{city}</li>
-        <li><span>компания:</span>{company}</li>
-      </ul>
-      <Link to={`/user/${id}`}>Подробнее</Link>
+    <div className={styles.user}>
+      <div className={styles.userItem}><span className={styles.userHeader}>ФИО:</span>{name}</div>
+      <div className={styles.userItem}><span className={styles.userHeader}>город:</span>{city}</div>
+      <div className={styles.userLastString}>
+      <div className={styles.userItem}><span className={styles.userHeader}>компания:</span>{company}</div>
+      <Link className={styles.userLink} to={`/user/${id}`}>Подробнее</Link>
+      </div>
     </div >
   )
 }

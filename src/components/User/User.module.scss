@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.user {
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: $card-color;
+  border-radius: 8px;
+}
+
+.userHeader {
+  margin-right: 7px;
+  color: $field-color;
+}
+
+.userItem {
+  margin-bottom: 7px;
+}
+
+.userLastString .userItem {
+  margin-bottom: 0px;
+}
+
+.userLastString {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userLink {
+  color: $highlight-color;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 14.06px;
+}
