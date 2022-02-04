@@ -6,6 +6,7 @@ import { EditButton } from '../EditButton/EditButton'
 import { SendButton } from '../SendButton/SendButton'
 import { Input } from '../Input/Input'
 import { Textarea } from '../Textarea/Textarea'
+import { validateRequiredFields } from '../../common/commonFunctions'
 import styles from './UserCard.module.scss'
 
 export const UserCard: React.FC = () => {
@@ -18,7 +19,7 @@ export const UserCard: React.FC = () => {
     website: '', city: '', street: '', zipcode: '', comment: ''
   })
   const [isSubmit, setSubmit] = useState<boolean>(true);
-  const [isRequired, setRequired] = useState<boolean>(false);
+  const [emptyFields, setEmptyField] = useState<Array<string>>([]);
 
   useEffect(() => {
     const currentUser = items.filter(item => item.id === Number(params.id))[0]
@@ -43,12 +44,11 @@ export const UserCard: React.FC = () => {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    validate(valuesForm);
+    emptyFields.length === 0 ? setSubmit(true) : setSubmit(false);
     if (isSubmit) {
       let json = JSON.stringify(valuesForm)
       console.log(json)
     }
-
   }
 
   function handleClick(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -56,19 +56,8 @@ export const UserCard: React.FC = () => {
       ...valuesForm,
       [e.currentTarget.name]: e.currentTarget.value,
     }
-    setValues(updateValue)
-  }
-
-  function validate(obj: any) {
-    for (let key in obj) {
-      if (obj[key] === '' && key !== 'comment') {
-        setSubmit(false)
-      }
-      else {
-        setSubmit(true)
-      }
-    }
-
+    setValues(updateValue);
+    validateRequiredFields(e.currentTarget, emptyFields, setEmptyField);
   }
 
   return (
@@ -93,7 +82,6 @@ export const UserCard: React.FC = () => {
           <SendButton disabled={disabled} />
         </form >
       }
-
     </div>
   )
 }

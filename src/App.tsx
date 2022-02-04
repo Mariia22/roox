@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { UserType } from './types/user';
-import { getUsers } from './api/api';
-import { UserList } from './components/UserList/UserList';
-import { FilterBlock } from './components/FilterBlock/FilterBlock';
-import { Loading } from './components/Loading/Loading';
-import style from './styles/App.module.scss';
-import { UserCard } from './components/UserCard/UserCard';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { UserType } from './types/user'
+import { getUsers } from './common/api'
+import { UserList } from './components/UserList/UserList'
+import { FilterBlock } from './components/FilterBlock/FilterBlock'
+import { Loading } from './components/Loading/Loading'
+import style from './styles/App.module.scss'
+import { UserCard } from './components/UserCard/UserCard'
 
 export const UsersContext = React.createContext<Array<UserType>>([]);
 
@@ -24,12 +24,12 @@ function App() {
 
   const setSort = (filter: string): void => {
     if (filter === 'city') {
-      const sortedUsersCity = [...users].sort((a, b) => (a.address.city > b.address.city) ? 1 : -1);
-      setUsers(sortedUsersCity);
+      const sortedUsersCity = [...users].sort((a, b) => (a.address.city > b.address.city) ? 1 : -1)
+      setUsers(sortedUsersCity)
     }
     else if (filter === 'company') {
-      const sortedUsersCompany = [...users].sort((a, b) => (a.company.name > b.company.name) ? 1 : -1);
-      setUsers(sortedUsersCompany);
+      const sortedUsersCompany = [...users].sort((a, b) => (a.company.name > b.company.name) ? 1 : -1)
+      setUsers(sortedUsersCompany)
     }
   }
 
@@ -48,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
