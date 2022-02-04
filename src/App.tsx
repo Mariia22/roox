@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { UserType } from './types/user'
 import { getUsers } from './common/api'
 import { UserList } from './components/UserList/UserList'
