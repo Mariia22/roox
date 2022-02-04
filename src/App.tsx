@@ -12,14 +12,14 @@ export const UsersContext = React.createContext<Array<UserType>>([]);
 
 function App() {
   const [users, setUsers] = useState<Array<UserType>>([])
-  const [isLoading, setLoading] = useState<Boolean>(false)
+  const [isLoading, setLoading] = useState<Boolean>(true)
 
   useEffect(() => {
-    setLoading(true)
-    getUsers().then((data) => {
-      setUsers(data)
-      setLoading(false)
-    })
+    getUsers()
+      .then((data) => {
+        setUsers(data)
+      })
+      .then(() => setLoading(false))
   }, [])
 
   const setSort = (filter: string): void => {

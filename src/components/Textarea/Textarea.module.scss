@@ -15,4 +15,8 @@ textarea {
  margin-bottom: 19px;
  border: 1px solid $border-input;
  border-radius: 5px;
+
+ &:disabled {
+  opacity: 30%;
+}
 }

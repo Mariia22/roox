@@ -90,7 +90,7 @@ export const UserCard: React.FC = () => {
             <Input labelName='Website' name='website' type='text' value={valuesForm.website} disabled={disabled} onChange={handleClick} required={true} />
             <Textarea labelName='Comment' name='comment' value={valuesForm.comment} disabled={disabled} onChange={handleClick} />
           </div>
-          <SendButton />
+          <SendButton disabled={disabled} />
         </form >
       }
 

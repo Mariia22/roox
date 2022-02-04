@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from './SendButton.module.scss'
 
-export const SendButton: React.FC = () => {
-  const isActive = false;
+interface SubmitType {
+  disabled: boolean
+}
+export const SendButton: React.FC<SubmitType> = ({ disabled }) => {
   return (
-    <button className={isActive ? styles.sendButton : styles.sendButtonActive} type="submit">Отправить</button>
+    <button className={styles.sendButton} type="submit" disabled={disabled}>Отправить</button>
   );
 };
