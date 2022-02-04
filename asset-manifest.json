@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/roox/static/css/main.6c67a8af.css",
+    "main.js": "/roox/static/js/main.8e7e77fb.js",
+    "static/media/Roboto-Regular.ttf": "/roox/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
+    "static/media/Roboto-Bold.ttf": "/roox/static/media/Roboto-Bold.75371f53f06181df75f1.ttf",
+    "static/media/loading.webp": "/roox/static/media/loading.ac71ea03c12b538d5157.webp",
+    "index.html": "/roox/index.html",
+    "main.6c67a8af.css.map": "/roox/static/css/main.6c67a8af.css.map",
+    "main.8e7e77fb.js.map": "/roox/static/js/main.8e7e77fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c67a8af.css",
+    "static/js/main.8e7e77fb.js"
+  ]
+}
